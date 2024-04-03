@@ -1,9 +1,12 @@
 "use client";
 
 import Link from 'next/link';
+import { api } from "pnpm/trpc/server";
 
-export default function Reservation() {
-  console.log('Hello from page1');
+export async function Reservation() {
+  const ServicesInfo = await api.service.getAllService();
+
+  console.log(ServicesInfo);
   return (
       <main>
         <div>

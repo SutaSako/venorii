@@ -1,4 +1,9 @@
 import { postRouter } from "pnpm/server/api/routers/post";
+import { salonRouter } from "pnpm/server/api/routers/salon";
+import { serviceRouter } from "pnpm/server/api/routers/service";
+import { employeeRouter } from "pnpm/server/api/routers/employee";
+import { appointmentRouter } from "pnpm/server/api/routers/appointment";
+
 import { createCallerFactory, createTRPCRouter } from "pnpm/server/api/trpc";
 
 /**
@@ -8,6 +13,10 @@ import { createCallerFactory, createTRPCRouter } from "pnpm/server/api/trpc";
  */
 export const appRouter = createTRPCRouter({
   post: postRouter,
+  salon: salonRouter,
+  service: serviceRouter,
+  employee: employeeRouter,
+  appointment: appointmentRouter,
 });
 
 // export type definition of API

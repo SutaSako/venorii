@@ -50,16 +50,17 @@ model Employee {
 }
 
 model Appointment {
-    id          Int      @id @default(autoincrement())
-    date        DateTime
-    duration    Int
-    employeeId  Int
-    serviceId   Int
-    clientName  String
-    clientPhone String
-    notes       String? 
-    createdAt   DateTime @default(now())
-    updatedAt   DateTime @updatedAt
-    employee    Employee @relation(fields: [employeeId], references: [id])
-    service     Service  @relation(fields: [serviceId], references: [id])
+    id              Int      @id @default(autoincrement())
+    date            DateTime
+    hour            Int
+    employeeId      Int
+    serviceId       Int
+    clientFirstName  String
+    clientLastName   String
+    clientPhone     String
+    notes           String? 
+    createdAt       DateTime @default(now())
+    updatedAt       DateTime @updatedAt
+    employee        Employee @relation(fields: [employeeId], references: [id])
+    service         Service  @relation(fields: [serviceId], references: [id])
 }
